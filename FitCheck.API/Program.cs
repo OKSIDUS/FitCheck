@@ -1,4 +1,6 @@
 using FitCheck.DAL.DataContext;
+using FitCheck.DAL.Interfaces;
+using FitCheck.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -24,6 +26,9 @@ namespace FitCheck.API
 
             builder.Host.UseSerilog((context, config) =>
                 config.ReadFrom.Configuration(context.Configuration));
+
+            //DAL
+            builder.Services.AddScoped<IBodyMeasurementRepository, BodyMeasurementRepository>();
 
             var app = builder.Build();
 
