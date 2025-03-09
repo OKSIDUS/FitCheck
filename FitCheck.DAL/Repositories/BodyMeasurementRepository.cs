@@ -1,7 +1,9 @@
 ﻿using FitCheck.DAL.DataContext;
 using FitCheck.DAL.DataContext.Entity;
 using FitCheck.DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace FitCheck.DAL.Repositories
 {
@@ -16,24 +18,82 @@ namespace FitCheck.DAL.Repositories
             _logger = logger;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var bodyMeasurement = await _dbContext.BodyMeasurements.FindAsync(id);
+                if (bodyMeasurement is not null)
+                {
+                    _dbContext.BodyMeasurements.Remove(bodyMeasurement);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                
+                return false;
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
         }
 
-        public Task<BodyMeasurements> GetByIdAsync(int id)
+        public async Task<BodyMeasurements?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (id > 0)
+                {
+                    var bodyMeasurement = await _dbContext.BodyMeasurements.FindAsync(id);
+                    return bodyMeasurement;
+
+                }
+
+                return null;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+            
         }
 
-        public Task<IEnumerable<BodyMeasurements>> GetByUserIdAsync(int userId)
+        public async Task<IEnumerable<BodyMeasurements>> GetByUserIdAsync(int userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (userId > 0)
+                {
+                    var bodyMeasurements = await _dbContext.BodyMeasurements.Where(b => b.UserId == userId).ToListAsync();
+                    return bodyMeasurements;
+                }
+
+                return new List<BodyMeasurements>();
+            }
+            catch(Exception ex)
+            {
+                return new List<BodyMeasurements>();
+            }
+            
         }
 
-        public Task<bool> UpdateAsync(BodyMeasurements bodyMeasurements)
+        public async Task<bool> UpdateAsync(BodyMeasurements bodyMeasurements)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (bodyMeasurements is not null)
+                {
+                    _dbContext.BodyMeasurements.Update(bodyMeasurements);
+                    await _dbContext.SaveChangesAsync();
+                    return true;
+                }
+                return false;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
