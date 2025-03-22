@@ -1,9 +1,12 @@
+using FitCheck.BAL.Interfaces;
+using FitCheck.BAL.Services;
 using FitCheck.Common.Mapper;
 using FitCheck.DAL.DataContext;
 using FitCheck.DAL.Interfaces;
 using FitCheck.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Globalization;
 
 
 namespace FitCheck.API
@@ -30,6 +33,9 @@ namespace FitCheck.API
 
             //DAL
             builder.Services.AddScoped<IBodyMeasurementRepository, BodyMeasurementRepository>();
+
+            //BAL
+            builder.Services.AddScoped<IBodyMeasurementService, BodyMeasrumentService>();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 

@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,10 +25,6 @@
     <ProjectReference Include="..\FitCheck.BAL\FitCheck.BAL.csproj" />
     <ProjectReference Include="..\FitCheck.Common\FitCheck.Common.csproj" />
     <ProjectReference Include="..\FitCheck.DAL\FitCheck.DAL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
