@@ -1,3 +1,4 @@
+using FitCheck.Common.Mapper;
 using FitCheck.DAL.DataContext;
 using FitCheck.DAL.Interfaces;
 using FitCheck.DAL.Repositories;
@@ -29,6 +30,8 @@ namespace FitCheck.API
 
             //DAL
             builder.Services.AddScoped<IBodyMeasurementRepository, BodyMeasurementRepository>();
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             var app = builder.Build();
 
