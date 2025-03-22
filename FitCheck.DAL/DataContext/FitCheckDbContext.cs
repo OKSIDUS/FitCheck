@@ -7,6 +7,6 @@ namespace FitCheck.DAL.DataContext
     {
         public FitCheckDbContext(DbContextOptions<FitCheckDbContext> options) : base(options) { }
 
-        DbSet<BodyMeasurements> BodyMeasurements { get; set; }
+        public DbSet<BodyMeasurements> BodyMeasurements { get; set; }
     }
 }

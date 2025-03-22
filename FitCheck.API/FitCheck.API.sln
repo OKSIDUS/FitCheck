@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitCheck.API", "FitCheck.API.csproj", "{063AA889-2E6A-497E-B0CE-A589FC14926A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitCheck.API", "FitCheck.API.csproj", "{063AA889-2E6A-497E-B0CE-A589FC14926A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitCheck.WebApp", "..\FitCheck.WebApp\FitCheck.WebApp.csproj", "{ABA18404-3802-4C70-BF00-9037EFECF637}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitCheck.WebApp", "..\FitCheck.WebApp\FitCheck.WebApp.csproj", "{ABA18404-3802-4C70-BF00-9037EFECF637}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitCheck.BAL", "..\FitCheck.BAL\FitCheck.BAL.csproj", "{7A52304C-DDE0-4E66-89B9-1848B0B64DD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitCheck.BAL", "..\FitCheck.BAL\FitCheck.BAL.csproj", "{7A52304C-DDE0-4E66-89B9-1848B0B64DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitCheck.DAL", "..\FitCheck.DAL\FitCheck.DAL.csproj", "{37BF441C-961F-4DC0-8991-7443BFD851CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitCheck.DAL", "..\FitCheck.DAL\FitCheck.DAL.csproj", "{37BF441C-961F-4DC0-8991-7443BFD851CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitCheck.Common", "..\FitCheck.Common\FitCheck.Common.csproj", "{F5CB2819-C959-4B89-8834-D27CD92F3B2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{37BF441C-961F-4DC0-8991-7443BFD851CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BF441C-961F-4DC0-8991-7443BFD851CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BF441C-961F-4DC0-8991-7443BFD851CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5CB2819-C959-4B89-8834-D27CD92F3B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5CB2819-C959-4B89-8834-D27CD92F3B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5CB2819-C959-4B89-8834-D27CD92F3B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5CB2819-C959-4B89-8834-D27CD92F3B2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
